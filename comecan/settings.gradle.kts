@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "app"
-include(":app")
+rootProject.name = "comecan"
+include(":comecan")

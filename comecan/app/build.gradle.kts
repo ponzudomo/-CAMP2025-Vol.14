@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.app"
+    namespace = "com.example.comecan"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.example.app"
+        applicationId = "com.example.comecan"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -42,6 +42,8 @@ android {
 }
 
 dependencies {
+    // --- なんか最初から入ってたやつ ---
+    // --- Android/Composeの基本セット ---
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -57,4 +59,16 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    // --- 状態管理 (ViewModel) ---
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
+    // --- 通信 (Retrofit & OkHttp) ---
+    implementation(libs.retrofit)
+    implementation(libs.converter.moshi)
+    implementation(libs.logging.interceptor) // ログ確認用
+
+    // --- JSON解析 (Moshi) ---
+    implementation(libs.moshi.kotlin)
 }
